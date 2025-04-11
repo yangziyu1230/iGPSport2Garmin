@@ -168,6 +168,7 @@ class GarminClient:
             
             # Perform a new login
             logger.info("Performing new Garmin authentication")
+            garth.configure(domain="garmin.cn")
             garth.login(self.email, self.password)
             
             # Save the session for future use
@@ -432,7 +433,7 @@ def main():
     igpsport_password = os.environ.get("IGPSPORT_PASSWORD")
     garmin_email = os.environ.get("GARMIN_EMAIL")
     garmin_password = os.environ.get("GARMIN_PASSWORD")
-    garmin_domain = os.environ.get("GARMIN_DOMAIN") or "garmin.com.cn"
+    garmin_domain = os.environ.get("GARMIN_DOMAIN") or "garmin.cn"
     
     # Log the session file location for debugging
     logger.info(f"Garmin session directory location: {os.path.abspath(GARMIN_SESSION_DIR)}")
