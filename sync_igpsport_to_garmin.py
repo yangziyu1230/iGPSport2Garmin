@@ -168,7 +168,7 @@ class GarminClient:
             
             # Perform a new login
             logger.info("Performing new Garmin authentication")
-            garth.configure(domain="garmin.cn")
+            garth.configure(domain="garmin.com")
             garth.login(self.email, self.password)
             
             # Save the session for future use
